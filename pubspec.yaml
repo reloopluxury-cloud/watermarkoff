@@ -1,0 +1,38 @@
+name: watermark_off
+description: "Fully offline video watermark remover. All processing happens on-device — no video or frame ever leaves the phone."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+
+  # Lets the user pick a video from local storage. No network calls.
+  file_picker: ^8.1.2
+
+  # Plays the imported video and the processed result, fully offline.
+  video_player: ^2.9.2
+
+  # Community-maintained fork of FFmpegKit (the original ffmpeg_kit_flutter
+  # was discontinued in 2025). This is what actually runs the offline
+  # watermark-removal command on-device. No internet access required —
+  # the FFmpeg binary is bundled into the app at build time.
+  ffmpeg_kit_flutter_new: ^3.1.0
+
+  # Local app storage paths (temp files, output videos) — no cloud.
+  path_provider: ^2.1.4
+
+  # Lets the user save the finished video back to their gallery.
+  gal: ^2.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
